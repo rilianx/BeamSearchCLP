@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 G2LA
 
 # Compiled source #
@@ -38,11 +39,14 @@ G2LA
 ehthumbs.db
 Thumbs.db
 
+=======
+>>>>>>> b7dba5fcf85fc3fd45fc92575c90abaa4b3c1770
 CMakeCache.txt
 CMakeFiles
 Makefile
 cmake_install.cmake
 install_manifest.txt
+<<<<<<< HEAD
 *~
 *.a
 *.o
@@ -160,3 +164,5 @@ Tests/FindPackageModeMakefileTest/cmakeExecutable.mk
 Tests/X11/HelloWorldX11
 Tests/X11/UseX11
 
+=======
+>>>>>>> b7dba5fcf85fc3fd45fc92575c90abaa4b3c1770
