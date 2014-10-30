@@ -1,0 +1,247 @@
+instance 0
+curr_w	current_util	current_time
+volume utilization (%):0.881602(0.252628), nb blocks:40(1), rem blocks:12(1)
+volume utilization (%):0.886057(0.252362), nb blocks:40(1), rem blocks:10(1)
+volume utilization (%):0.88955(0.241107), nb blocks:45(1), rem blocks:15(1)
+volume utilization (%):0.901437(0.224302), nb blocks:41(1), rem blocks:16(1)
+volume utilization (%):0.904672(0.223792), nb blocks:40(1), rem blocks:13(1)
+volume utilization (%):0.906819(0.203209), nb blocks:39(1), rem blocks:12(1)
+volume utilization (%):0.909156(0.313544), nb blocks:32(2), rem blocks:13(2)
+volume utilization (%):0.909977(0.371356), nb blocks:37(3), rem blocks:13(3)
+volume utilization (%):0.910347(0.453483), nb blocks:38(5), rem blocks:13(5)
+volume utilization (%):0.910416(0.446814), nb blocks:40(5), rem blocks:14(5)
+volume utilization (%):0.910756(0.456359), nb blocks:40(5), rem blocks:14(5)
+volume utilization (%):0.911296(0.456359), nb blocks:39(5), rem blocks:13(5)
+volume utilization (%):0.912696(0.55025), nb blocks:45(5), rem blocks:11(5)
+volume utilization (%):0.913096(0.46935), nb blocks:41(5), rem blocks:11(5)
+volume utilization (%):0.915002(0.479311), nb blocks:42(6), rem blocks:13(6)
+volume utilization (%):0.916449(0.478796), nb blocks:43(6), rem blocks:14(6)
+volume utilization (%):0.919391(0.522736), nb blocks:43(8), rem blocks:14(8)
+volume utilization (%):0.921555(0.535395), nb blocks:43(7), rem blocks:12(7)
+10:	0.921555	11.76
+volume utilization (%):0.921588(0.627414), nb blocks:42(8), rem blocks:12(8)
+volume utilization (%):0.923494(0.657143), nb blocks:41(9), rem blocks:12(8)
+volume utilization (%):0.926371(0.645803), nb blocks:42(9), rem blocks:16(8)
+volume utilization (%):0.928104(0.681475), nb blocks:40(11), rem blocks:16(8)
+Utilization(30):0.928104
+15:	0.928104	30.85
+volume utilization (%):0.93051(0.590769), nb blocks:43(8), rem blocks:11(6)
+volume utilization (%):0.93297(0.574165), nb blocks:40(8), rem blocks:12(6)
+volume utilization (%):0.936449(0.609773), nb blocks:41(10), rem blocks:14(6)
+22:	0.936449	67
+32:	0.936449	150.14
+Utilization:0.936449 150.14
+instance 1
+curr_w	current_util	current_time
+volume utilization (%):0.87446(0.13023), nb blocks:39(1), rem blocks:15(1)
+volume utilization (%):0.880676(0.1263), nb blocks:42(1), rem blocks:13(1)
+volume utilization (%):0.882122(0.121998), nb blocks:44(1), rem blocks:14(1)
+volume utilization (%):0.886206(0.117894), nb blocks:36(1), rem blocks:11(1)
+volume utilization (%):0.89073(0.113161), nb blocks:39(1), rem blocks:14(1)
+volume utilization (%):0.907121(0.113045), nb blocks:43(1), rem blocks:13(1)
+volume utilization (%):0.907717(0.347812), nb blocks:37(3), rem blocks:12(3)
+volume utilization (%):0.909263(0.415314), nb blocks:42(4), rem blocks:15(4)
+volume utilization (%):0.909622(0.43298), nb blocks:40(4), rem blocks:14(4)
+volume utilization (%):0.911368(0.476701), nb blocks:41(5), rem blocks:12(5)
+volume utilization (%):0.913135(0.481984), nb blocks:37(5), rem blocks:13(5)
+volume utilization (%):0.915341(0.504699), nb blocks:41(6), rem blocks:13(6)
+volume utilization (%):0.919229(0.508223), nb blocks:42(6), rem blocks:16(6)
+volume utilization (%):0.919418(0.635492), nb blocks:41(12), rem blocks:14(9)
+volume utilization (%):0.924816(0.624474), nb blocks:44(13), rem blocks:16(9)
+volume utilization (%):0.926381(0.626503), nb blocks:46(14), rem blocks:15(9)
+volume utilization (%):0.926575(0.658817), nb blocks:44(15), rem blocks:15(9)
+10:	0.926575	15.39
+Utilization(30):0.926575
+volume utilization (%):0.928715(0.660544), nb blocks:43(11), rem blocks:15(8)
+volume utilization (%):0.929757(0.708035), nb blocks:47(18), rem blocks:17(9)
+15:	0.929757	49.46
+22:	0.929757	123.45
+Utilization(150):0.929757
+32:	0.929757	154.37
+Utilization:0.929757 154.37
+instance 2
+curr_w	current_util	current_time
+volume utilization (%):0.871735(0.240157), nb blocks:38(1), rem blocks:15(1)
+volume utilization (%):0.880724(0.238014), nb blocks:41(1), rem blocks:17(1)
+volume utilization (%):0.886597(0.208246), nb blocks:45(1), rem blocks:18(1)
+volume utilization (%):0.912265(0.207388), nb blocks:40(1), rem blocks:18(1)
+volume utilization (%):0.913659(0.405304), nb blocks:38(4), rem blocks:13(4)
+volume utilization (%):0.920742(0.394837), nb blocks:40(4), rem blocks:9(4)
+volume utilization (%):0.921689(0.551052), nb blocks:40(9), rem blocks:13(8)
+volume utilization (%):0.92355(0.548434), nb blocks:40(9), rem blocks:12(8)
+volume utilization (%):0.923991(0.562088), nb blocks:41(9), rem blocks:12(8)
+volume utilization (%):0.928841(0.553584), nb blocks:41(9), rem blocks:12(8)
+10:	0.928841	14.44
+Utilization(30):0.928841
+15:	0.928841	34.19
+volume utilization (%):0.932089(0.576112), nb blocks:44(10), rem blocks:9(8)
+volume utilization (%):0.932816(0.628828), nb blocks:42(12), rem blocks:13(8)
+volume utilization (%):0.934668(0.63976), nb blocks:46(15), rem blocks:13(9)
+volume utilization (%):0.935847(0.679783), nb blocks:46(17), rem blocks:12(9)
+volume utilization (%):0.93629(0.675015), nb blocks:47(17), rem blocks:13(9)
+22:	0.93629	85.51
+Utilization(150):0.93629
+32:	0.93629	150.08
+Utilization:0.93629 150.08
+instance 3
+curr_w	current_util	current_time
+volume utilization (%):0.847504(0.271765), nb blocks:39(1), rem blocks:15(1)
+volume utilization (%):0.871054(0.261713), nb blocks:40(1), rem blocks:14(1)
+volume utilization (%):0.880109(0.259181), nb blocks:38(1), rem blocks:15(1)
+volume utilization (%):0.881632(0.222665), nb blocks:40(1), rem blocks:16(1)
+volume utilization (%):0.888512(0.198577), nb blocks:36(1), rem blocks:12(1)
+volume utilization (%):0.904782(0.198007), nb blocks:36(1), rem blocks:12(1)
+volume utilization (%):0.906313(0.179823), nb blocks:37(1), rem blocks:14(1)
+volume utilization (%):0.910653(0.167066), nb blocks:38(1), rem blocks:13(1)
+volume utilization (%):0.910745(0.319743), nb blocks:39(2), rem blocks:13(2)
+volume utilization (%):0.911015(0.297779), nb blocks:37(2), rem blocks:13(2)
+volume utilization (%):0.918534(0.425347), nb blocks:39(3), rem blocks:12(3)
+volume utilization (%):0.921072(0.578001), nb blocks:41(6), rem blocks:13(6)
+volume utilization (%):0.923955(0.575835), nb blocks:45(10), rem blocks:14(7)
+volume utilization (%):0.925081(0.601292), nb blocks:46(12), rem blocks:17(8)
+volume utilization (%):0.926119(0.637716), nb blocks:43(14), rem blocks:15(8)
+10:	0.926119	10.49
+volume utilization (%):0.926361(0.499854), nb blocks:45(9), rem blocks:14(7)
+volume utilization (%):0.926828(0.519619), nb blocks:47(11), rem blocks:15(8)
+Utilization(30):0.926828
+volume utilization (%):0.927866(0.755601), nb blocks:47(24), rem blocks:14(10)
+volume utilization (%):0.927981(0.755601), nb blocks:45(24), rem blocks:12(10)
+volume utilization (%):0.929602(0.764852), nb blocks:45(25), rem blocks:14(10)
+volume utilization (%):0.930647(0.845763), nb blocks:46(31), rem blocks:16(13)
+15:	0.930647	32.87
+22:	0.930647	71.17
+Utilization(150):0.930647
+32:	0.930647	150.34
+Utilization:0.930647 150.34
+instance 4
+curr_w	current_util	current_time
+volume utilization (%):0.902993(0.204417), nb blocks:44(1), rem blocks:15(1)
+volume utilization (%):0.90823(0.170048), nb blocks:45(1), rem blocks:12(1)
+volume utilization (%):0.911163(0.329199), nb blocks:38(2), rem blocks:12(2)
+volume utilization (%):0.914622(0.345828), nb blocks:44(3), rem blocks:14(3)
+volume utilization (%):0.915967(0.337128), nb blocks:43(3), rem blocks:13(3)
+volume utilization (%):0.920279(0.513655), nb blocks:40(6), rem blocks:13(6)
+volume utilization (%):0.925629(0.558466), nb blocks:45(7), rem blocks:11(7)
+volume utilization (%):0.925745(0.57535), nb blocks:47(8), rem blocks:13(8)
+volume utilization (%):0.927597(0.543885), nb blocks:42(10), rem blocks:13(8)
+10:	0.927597	12.34
+Utilization(30):0.927597
+volume utilization (%):0.929415(0.616745), nb blocks:41(10), rem blocks:14(8)
+volume utilization (%):0.931524(0.788863), nb blocks:34(17), rem blocks:9(9)
+15:	0.931524	35.6
+volume utilization (%):0.933435(0.636306), nb blocks:43(12), rem blocks:7(9)
+volume utilization (%):0.936653(0.705641), nb blocks:43(16), rem blocks:11(9)
+volume utilization (%):0.937271(0.798357), nb blocks:46(23), rem blocks:12(12)
+volume utilization (%):0.94024(0.819712), nb blocks:47(27), rem blocks:12(12)
+22:	0.94024	92.81
+Utilization(150):0.94024
+32:	0.94024	151.11
+Utilization:0.94024 151.11
+instance 5
+curr_w	current_util	current_time
+volume utilization (%):0.884261(0.0836683), nb blocks:48(1), rem blocks:16(1)
+volume utilization (%):0.888999(0.0833575), nb blocks:48(1), rem blocks:15(1)
+volume utilization (%):0.893363(0.0819817), nb blocks:48(1), rem blocks:17(1)
+volume utilization (%):0.897162(0.0819817), nb blocks:46(1), rem blocks:17(1)
+volume utilization (%):0.901154(0.0819817), nb blocks:50(1), rem blocks:14(1)
+volume utilization (%):0.904849(0.08068), nb blocks:48(1), rem blocks:16(1)
+volume utilization (%):0.905004(0.075728), nb blocks:50(1), rem blocks:15(1)
+volume utilization (%):0.909054(0.0716191), nb blocks:48(1), rem blocks:17(1)
+volume utilization (%):0.913478(0.150501), nb blocks:49(2), rem blocks:14(2)
+volume utilization (%):0.916222(0.299408), nb blocks:53(4), rem blocks:19(4)
+volume utilization (%):0.92157(0.4461), nb blocks:49(8), rem blocks:13(8)
+volume utilization (%):0.922954(0.473924), nb blocks:48(9), rem blocks:13(8)
+10:	0.922954	22.29
+Utilization(30):0.922954
+volume utilization (%):0.923989(0.527062), nb blocks:49(12), rem blocks:16(8)
+volume utilization (%):0.926787(0.551334), nb blocks:53(13), rem blocks:15(8)
+15:	0.926787	67.95
+Utilization(150):0.926787
+22:	0.926787	150.17
+Utilization:0.926787 150.17
+instance 6
+curr_w	current_util	current_time
+volume utilization (%):0.878198(0.259192), nb blocks:35(1), rem blocks:13(1)
+volume utilization (%):0.896442(0.259192), nb blocks:33(1), rem blocks:13(1)
+volume utilization (%):0.898729(0.22623), nb blocks:43(1), rem blocks:16(1)
+volume utilization (%):0.900636(0.317913), nb blocks:41(2), rem blocks:13(2)
+volume utilization (%):0.902399(0.296608), nb blocks:39(2), rem blocks:14(2)
+volume utilization (%):0.902852(0.296608), nb blocks:37(2), rem blocks:14(2)
+volume utilization (%):0.916818(0.325589), nb blocks:40(2), rem blocks:14(2)
+volume utilization (%):0.918656(0.536291), nb blocks:37(5), rem blocks:14(5)
+volume utilization (%):0.920559(0.548693), nb blocks:39(7), rem blocks:12(6)
+volume utilization (%):0.922442(0.551033), nb blocks:39(7), rem blocks:11(5)
+10:	0.922442	9.07
+volume utilization (%):0.923504(0.536314), nb blocks:39(6), rem blocks:12(5)
+volume utilization (%):0.925127(0.564422), nb blocks:39(7), rem blocks:11(6)
+volume utilization (%):0.926497(0.596552), nb blocks:38(9), rem blocks:12(5)
+volume utilization (%):0.926829(0.601585), nb blocks:39(9), rem blocks:14(5)
+volume utilization (%):0.928148(0.597173), nb blocks:41(9), rem blocks:14(5)
+volume utilization (%):0.928752(0.604319), nb blocks:40(11), rem blocks:14(6)
+15:	0.928752	22.75
+Utilization(30):0.928752
+volume utilization (%):0.929682(0.665142), nb blocks:46(15), rem blocks:13(9)
+volume utilization (%):0.931314(0.67814), nb blocks:42(13), rem blocks:13(8)
+volume utilization (%):0.934409(0.795081), nb blocks:46(21), rem blocks:15(11)
+22:	0.934409	64.71
+32:	0.934409	150.32
+Utilization:0.934409 150.32
+instance 7
+curr_w	current_util	current_time
+volume utilization (%):0.872129(0.19693), nb blocks:32(1), rem blocks:13(1)
+volume utilization (%):0.890051(0.190017), nb blocks:35(1), rem blocks:13(1)
+volume utilization (%):0.89605(0.180679), nb blocks:36(1), rem blocks:10(1)
+volume utilization (%):0.906777(0.180679), nb blocks:39(1), rem blocks:13(1)
+volume utilization (%):0.907382(0.401961), nb blocks:35(3), rem blocks:9(3)
+volume utilization (%):0.909681(0.504563), nb blocks:41(6), rem blocks:10(6)
+volume utilization (%):0.912007(0.469995), nb blocks:33(5), rem blocks:11(5)
+volume utilization (%):0.915617(0.582286), nb blocks:44(11), rem blocks:17(8)
+volume utilization (%):0.91664(0.598112), nb blocks:41(12), rem blocks:15(8)
+volume utilization (%):0.919615(0.606228), nb blocks:46(13), rem blocks:17(8)
+10:	0.919615	13.61
+volume utilization (%):0.922071(0.48269), nb blocks:38(7), rem blocks:11(7)
+Utilization(30):0.922071
+volume utilization (%):0.924324(0.667913), nb blocks:41(15), rem blocks:13(10)
+volume utilization (%):0.925716(0.691727), nb blocks:41(16), rem blocks:15(9)
+volume utilization (%):0.926306(0.750233), nb blocks:43(20), rem blocks:13(10)
+volume utilization (%):0.926626(0.76827), nb blocks:44(21), rem blocks:13(10)
+volume utilization (%):0.926644(0.803549), nb blocks:46(26), rem blocks:17(12)
+volume utilization (%):0.927315(0.802324), nb blocks:46(26), rem blocks:17(12)
+volume utilization (%):0.92768(0.810831), nb blocks:45(27), rem blocks:16(13)
+volume utilization (%):0.930885(0.81272), nb blocks:46(27), rem blocks:15(13)
+15:	0.930885	37.89
+22:	0.930885	90.58
+Utilization(150):0.930885
+32:	0.930885	151.04
+Utilization:0.930885 151.04
+instance 8
+curr_w	current_util	current_time
+volume utilization (%):0.87295(0.265891), nb blocks:37(1), rem blocks:16(1)
+volume utilization (%):0.884235(0.208192), nb blocks:36(1), rem blocks:13(1)
+volume utilization (%):0.891771(0.205961), nb blocks:37(1), rem blocks:12(1)
+volume utilization (%):0.893179(0.22166), nb blocks:35(1), rem blocks:11(1)
+volume utilization (%):0.893976(0.191334), nb blocks:37(1), rem blocks:15(1)
+volume utilization (%):0.905732(0.183443), nb blocks:36(1), rem blocks:12(1)
+volume utilization (%):0.906386(0.280199), nb blocks:38(2), rem blocks:13(2)
+volume utilization (%):0.907002(0.287914), nb blocks:38(2), rem blocks:14(2)
+volume utilization (%):0.907152(0.418172), nb blocks:36(3), rem blocks:13(3)
+volume utilization (%):0.908431(0.318416), nb blocks:42(2), rem blocks:13(2)
+volume utilization (%):0.910039(0.46634), nb blocks:38(4), rem blocks:10(4)
+volume utilization (%):0.910067(0.51571), nb blocks:36(5), rem blocks:13(5)
+volume utilization (%):0.91279(0.553374), nb blocks:39(6), rem blocks:14(6)
+volume utilization (%):0.913657(0.51405), nb blocks:39(6), rem blocks:13(6)
+volume utilization (%):0.915283(0.544909), nb blocks:38(7), rem blocks:12(7)
+volume utilization (%):0.916386(0.547648), nb blocks:41(7), rem blocks:12(7)
+volume utilization (%):0.921908(0.667969), nb blocks:41(12), rem blocks:12(8)
+volume utilization (%):0.922518(0.692741), nb blocks:42(14), rem blocks:13(7)
+volume utilization (%):0.926707(0.71376), nb blocks:42(15), rem blocks:8(8)
+volume utilization (%):0.926735(0.704309), nb blocks:43(15), rem blocks:15(8)
+10:	0.926735	13
+volume utilization (%):0.932257(0.603383), nb blocks:38(10), rem blocks:14(8)
+Utilization(30):0.932257
+volume utilization (%):0.934152(0.735489), nb blocks:41(16), rem blocks:11(9)
+15:	0.934152	31.9
+volume utilization (%):0.936063(0.686941), nb blocks:40(13), rem blocks:13(8)
+volume utilization (%):0.936148(0.690175), nb blocks:38(13), rem blocks:12(8)
+volume utilization (%):0.93713(0.78181), nb blocks:40(19), rem blocks:13(10)
+22:	0.93713	78.81
