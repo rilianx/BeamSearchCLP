@@ -34,7 +34,6 @@ using namespace std;
 using namespace std::tr1;
 using namespace odp;
 
-
 void add(map<BoxType*,int> &boxes1, const map<BoxType*,int> &boxes2) {
 	map<BoxType*,int>::const_iterator it_nb;
     for(it_nb = boxes2.begin(); it_nb!=boxes2.end(); it_nb++)
@@ -53,8 +52,7 @@ bool sub(map<BoxType*,int> &boxes1, const map<BoxType*,int> &boxes2) {
 
 long64 compute_fitness(CLP& clp, Container& cont, map<BoxType*,int>& nb_left_boxes, list<Block*>& blocks, long64& BEST_VOLUME, 
 Block_obj** first_block);
-long64 greedy(
-  list<Block*>& blocks, double *w, Container& cont, map<BoxType*,int>& nb_left_boxes, Block_obj** first_block);
+long64 greedy(list<Block*>& blocks, double *w, Container& cont, map<BoxType*,int>& nb_left_boxes, Block_obj** first_block);
 void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long64 &best_volume);
 void fair_beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long64 &best_volume);
 bool verify_solution(CLP& clp,Container& cont_tmp);
@@ -159,9 +157,9 @@ class Node{
 
 };
 
-	   long64 Node::W=0;
-	   long64 Node::L=0;
-	   long64 Node::H=0;
+long64 Node::W=0;
+long64 Node::L=0;
+long64 Node::H=0;
 
 
 
@@ -173,20 +171,19 @@ int beams=-1;
 bool time25=false, time50=false, time100=false;
 void get_bloxs(Node& node, list<Block_obj*>& bloxs, int w);
 
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv){
 
 	ifstream in(argv[1]);
 	int _inst0=atoi(argv[2]); //instancia de partida (e.g. 25)
 	int _inst1=atoi(argv[3]); //instancia de partida (e.g. 25)
 	double min_fr=atof(argv[4]);
-    Container::fsb = (atoi(argv[5])==1);
-    beams=-1; //search effort
+   	Container::fsb = (atoi(argv[5])==1);
+	beams=-1; //search effort
 	int time=atoi(argv[6]);
 	string output=argv[7];
 
  	long64 w0=10;
-    srand(1);
+     	srand(1);
      
 	Container::alpha=1.0;
 	
@@ -196,15 +193,15 @@ int main(int argc, char** argv)
 
 
      for(int inst=0;inst<100; inst++){
-	   CLP clp(in,time); //se inicializa el problema, 600 segundos de tiempo
-	   Node::W=clp.W;
-       Node::L=clp.L;
-       Node::H=clp.H;
+	CLP clp(in,time); //se inicializa el problema, 600 segundos de tiempo
+	Node::W=clp.W;
+        Node::L=clp.L;
+       	Node::H=clp.H;
 	   
-		 double time0=clp.get_time();
-		 time25=false;
-		 time50=false;
-		 time100=false;
+	double time0=clp.get_time();
+	time25=false;
+	time50=false;
+	time100=false;
 
 	   if(_inst0!=-1 && (inst<_inst0 || inst >_inst1)) continue;	
 	   long64 best_volume=0;
@@ -220,7 +217,7 @@ int main(int argc, char** argv)
         cout << "curr_w	current_util	current_time" << endl;
 		 while(!clp.timeout() && w <= 100000){
 		    beam_search(clp, set_blocks, w, best_volume);
-			cout << w << ":	"<< double(best_volume) / double(clp.W*clp.L*clp.H) << "	" << (clp.get_time()-time0) << endl;
+		    cout << w << ":	"<< double(best_volume) / double(clp.W*clp.L*clp.H) << "	" << (clp.get_time()-time0) << endl;
 		    if(!clp.timeout()){
 				if(beams!=-1) w=w*2.0;
 				else w=ceil(double(w)*sqrt(2));
@@ -258,95 +255,6 @@ struct byfitness {
   }
 };
 
-//~ void fair_beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long64 &best_volume){
-			//~ 
-	    //~ Container* cont= new Container(clp.L,clp.W,clp.H);
-	    //~ map<BoxType*,int>* nb_left_boxes= new map<BoxType*,int>(clp.nb_boxes); //cajas que faltan por colocar
-	    //~ list<Block*> blocks(set_blocks.begin(), set_blocks.end());   //bloques
-	    //~ 
-		//~ long64 alpha=double(clp.L*clp.W*clp.H)/M;
-		//~ 
-		//~ set<Node*,byfitness> S[M]; 
-		//~ 
-	//~ 
-		//~ //nodo raiz
-		//~ Node* node=new Node(cont, nb_left_boxes, blocks);
-			//~ 
-		//~ S[0].push_back(node);
-					//~ 
-//~ 
-        //~ while(true && !clp.timeout()){
-		    //~ set<Node*,byfitness> SS;
-			//~ for(int i=0;i<M;i++){
-			  //~ for(set<Node*,byfitness>::iteratior it=S[i].begin();it!=S[i].end();it++){
-				  //~ if(!visited[*it]) {SS=S[i];  goto end_loop;}
-			  //~ }
-		    //~ }
-		    //~ break; //no new nodes in the sets
-		    //~ end_loop:
-			//~ 
-			//~ 
-			//~ for(set<Node*,byfitness>::iteratior it=SS.begin();it!=SS.end();it++){
-				//~ if(visited[*it]) continue;
-				//~ Node* node=*it;
-				//~ visited[node]=true;
-				//~ 
-				//~ node->solveKnapsack(); 
-				//~ list<Block_obj> bloxs;
-				//~ 
-				//~ get_bloxs(*node, bloxs, w); //the best block-space pairs are obtained and put in succ
-				//~ 
-				//~ for(;bs!=bloxs.end() && !clp.timeout();bs++){
-					//~ node->insert_Block(*bs);
-					//~ long64 vol=node->vol;
-					//~ list<Block_obj> path;
-					//~ long64 eval=node->evaluate(clp, best_volume, path); //debe retornar lista de bloques colocados
-					//~ int lastj=-1;
-					//~ Node* lastn=node;
-					//~ for(int j=0;j<path.size()+1;i++){
-						//~ if(!created[make_pair(vol,eval)] && eval > worst_eval(S[vol/alpha])){
-							//~ Node* n=new Node(lastn); //whole-copy
-							//~ for(int k=max(0,lastj); k<j; k++)
-							   //~ n->insert_Block(path[k]);
-							//~ n->fitness=eval;
-							//~ n->remove_unfeasible_blocks();
-							//~ 
-							//~ S[vol/alpha].insert(n);
-							//~ if(S[vol/alpha].size()>w) {
-								//~ set<Node*>::iteratior itt=SS.end(); --itt; 
-								//~ if(!visited[*itt]){
-								  //~ visited[*itt]=true;
-								  //~ (*itt)->delete_structures();
-							    //~ }
-								//~ removeNodes.push_back(*itt);
-								//~ S[vol/alpha].erase(*itt);
-							//~ }
-							//~ 
-							//~ lastn=n;
-						//~ }
-					//~ }
-					//~ node->remove_lastBlock();
-					//~ 
-				//~ }
-				//~ 
-				//~ 
-				//~ node->delete_structures();
-			//~ }
-			//~ 
-		    //~ while(!removeNodes.empty()){
-				//~ delete removeNodes.front();
-				//~ removeNodes.pop_front();
-		   //~ }	
-			//~ 
-		//~ }
-//~ 
-		//~ for(int i=0;i<M;i++){
-			//~ for(set<Node*,byfitness>::iteratior it=S[i].begin();it!=S[i].end();it++)
-				//~ delete *it;  
-		//~ }		
-			//~ 
-//~ }
-
 struct pair_hash {
     inline std::size_t operator()(const std::pair<int,int> & v) const {
         return v.first*31+v.second;
@@ -355,7 +263,6 @@ struct pair_hash {
         return v.first*31+v.second;
     }
 };
-
 
 bool hillclimbing2(CLP& clp, Node* n, long64 &best_volume,unordered_set< pair<ulong64,ulong64>, pair_hash > volfit_nodes){
 	vector<Block_obj*> removable_blocks(n->cont->removable_blocks.begin(),n->cont->removable_blocks.end());
@@ -401,7 +308,6 @@ bool hillclimbing2(CLP& clp, Node* n, long64 &best_volume,unordered_set< pair<ul
 		}
 		
 		list<Block_obj*>::iterator bb;
-        //cout << blocks.size() << endl;
 		for(bb=blocks.begin();bb!=blocks.end();bb++){
 			//n->insert_Block(*bb); 
 			//verify_solution(clp, *n->cont);
@@ -438,7 +344,7 @@ bool hillclimbing2(CLP& clp, Node* n, long64 &best_volume,unordered_set< pair<ul
 	
 	return success;
 }
-
+//hace swap entre bloques "removibles" para mejorar la evaluación
 bool hillclimbing(CLP& clp, Node* n, long64 &best_volume,unordered_set< pair<ulong64,ulong64>, pair_hash > volfit_nodes){
 	vector<Block_obj*> removable_blocks(n->cont->removable_blocks.begin(),n->cont->removable_blocks.end());
 	bool success=false;
@@ -500,155 +406,134 @@ bool hillclimbing(CLP& clp, Node* n, long64 &best_volume,unordered_set< pair<ulo
 }
 
 void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long64 &best_volume){
-			
-	    Container* cont= new Container(clp.L,clp.W,clp.H);
-	    map<BoxType*,int>* nb_left_boxes= new map<BoxType*,int>(clp.nb_boxes); //cajas que faltan por colocar
-	    list<Block*> blocks(set_blocks.begin(), set_blocks.end());   //bloques
-	    unordered_set< pair<ulong64,ulong64>, pair_hash > volfit_nodes;
-		
-		list<Node*> S; 
+	Container* cont= new Container(clp.L,clp.W,clp.H);
+	map<BoxType*,int>* nb_left_boxes= new map<BoxType*,int>(clp.nb_boxes); //cajas que faltan por colocar
+	list<Block*> blocks(set_blocks.begin(), set_blocks.end());   //bloques
+	unordered_set< pair<ulong64,ulong64>, pair_hash > volfit_nodes;
+  	list<Node*> S; 
 	
-		//nodo raiz
-		Node* node=new Node(cont, nb_left_boxes, blocks);
-			
-		S.push_back(node);
-					
+	//nodo raiz
+	Node* node=new Node(cont, nb_left_boxes, blocks);
+	S.push_back(node);
 
-		//S es el conjunto de nodos mantenidos en memoria
-		bool first=true;
-		while(S.size()!=0 && !clp.timeout()){
+	//S es el conjunto de nodos mantenidos en memoria
+	bool first=true;
+	while(S.size()!=0 && !clp.timeout()){
 
-			list<Node*>::iterator itS=S.begin();		
-			//N es usado para guardar los nodos de la siguiente generación
-			set<Node*, byfitness> N;
-			//cout <<"spaces:" << (*itS)->cont->free_spaces.size() << endl;	
-			//se expanden los nodos de la lista S
-            
-			for(;itS!=S.end();itS++){
+		list<Node*>::iterator itS=S.begin();		
+		//N es usado para guardar los nodos de la siguiente generación
+		set<Node*, byfitness> N;
+		//cout <<"spaces:" << (*itS)->cont->free_spaces.size() << endl;	
+		//se expanden los nodos de la lista S
+		for(;itS!=S.end();itS++){
+			Node* node=*itS;
+			list<Block_obj*> bloxs;
+			node->solveKnapsack(); 
+                	//hillclimbing2(clp, node, best_volume,volfit_nodes);
 
-				Node* node=*itS;
-				list<Block_obj*> bloxs;
-				
-				node->solveKnapsack(); 
-                hillclimbing2(clp, node, best_volume,volfit_nodes);
-
-                if(node->first_block) bloxs.push_back(new Block_obj(node->first_block->block,node->first_block));
-                double occ= double(node->cont->occupied_volume()) / double(clp.W*clp.L*clp.H) ;
-				get_bloxs(*node, bloxs,  (first)? w*w:w); //the best block-space pairs are obtained and put in succ
-                first=false;
-                
-                
-                
-         		list<Block_obj*>::iterator bs=bloxs.begin();
+                	if(node->first_block) bloxs.push_back(new Block_obj(node->first_block->block,node->first_block));
+                	double occ= double(node->cont->occupied_volume()) / double(clp.W*clp.L*clp.H) ;
+			get_bloxs(*node, bloxs,  (first)? w*w:w); //the best block-space pairs are obtained and put in succ
+                	first=false;
+                        list<Block_obj*>::iterator bs=bloxs.begin();
          		
-
-         		int i=0;
+        		int i=0;
          		set<Node*, byfitness> NN;
-				for(int j=0, k=0;bs!=bloxs.end() && !clp.timeout();bs++,k++){
+			for(int j=0, k=0;bs!=bloxs.end() && !clp.timeout();bs++,k++){
                    // if(k>0 && (double)rand()/(double)RAND_MAX > ((double)w-(double)NN.size())/((double)bloxs.size()-(double)k)) continue;
-                    
-                    
-					node->insert_Block(*bs);
-					Block_obj *first_block=NULL;
-					ulong64 eval=node->evaluate(clp, best_volume, &first_block);
-					Node* n=new Node(node, *bs, node->vol, eval, first_block);
-					NN.insert(n);
-					node->remove_Block(*bs);
-				}
+				node->insert_Block(*bs);
+				Block_obj *first_block=NULL;
+				ulong64 eval=node->evaluate(clp, best_volume, &first_block);
+				Node* n=new Node(node, *bs, node->vol, eval, first_block);
+				NN.insert(n);
+				node->remove_Block(*bs);
+			}
 
-				N.insert(NN.begin(),NN.end());
+			N.insert(NN.begin(),NN.end());
 
-					if(!time25 && clp.get_time()>30){
-						time25=true;
-						cout <<"Utilization(30):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
+			if(!time25 && clp.get_time()>30){
+				time25=true;
+				cout <<"Utilization(30):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
 						
-					}else if(!time50 && clp.get_time()>150){
-						time50=true;
-						cout <<"Utilization(150):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
-					}else if(!time100 && clp.get_time()>300){
-						time100=true;
-						cout <<"Utilization(300):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
-					} 
-			}
+			}else if(!time50 && clp.get_time()>150){
+				time50=true;
+				cout <<"Utilization(150):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
+			}else if(!time100 && clp.get_time()>300){
+				time100=true;
+				cout <<"Utilization(300):" << double(best_volume) / double(clp.W*clp.L*clp.H) << endl;
+			} 
+		}
 
 
-			//the best successors are maintained
-			//N.sort(node_by_fitness); 
-			set<Node*, by_fitness>::iterator itN=N.begin();
+		//the best successors are maintained
+		//N.sort(node_by_fitness); 
+		set<Node*, by_fitness>::iterator itN=N.begin();
 
-			long64 old_fitness; 
-			volfit_nodes.clear();
-			for(int i=0; itN!=N.end(); i++){
-				//se mantienen solo los w mejores nodos, el resto se elimina
-				if(i>= ((beams==-1)? w:beams)){
-					//se sobrepaso el tamano de la lista de beams (se eliminan los nuevos nodos)
+		long64 old_fitness; 
+		volfit_nodes.clear();
+		for(int i=0; itN!=N.end(); i++){
+			//se mantienen solo los w mejores nodos, el resto se elimina
+			if(i>= ((beams==-1)? w:beams)){
+				//se sobrepaso el tamano de la lista de beams (se eliminan los nuevos nodos)
+				delete (*itN)->blox;
+				delete *itN;
+				N.erase(itN++);
+			}else{				
+				Node *n = *itN;
+				if(volfit_nodes.find(make_pair(n->fitness,n->fitness))!=volfit_nodes.end()/*n->fitness==old_fitness*/){ 
+					//se eliminan nodos idénticos (o casi)
 					delete (*itN)->blox;
-					delete *itN;
-					N.erase(itN++);
-				}else{				
-					Node *n = *itN;
-					if(volfit_nodes.find(make_pair(n->fitness,n->fitness))!=volfit_nodes.end()/*n->fitness==old_fitness*/){ 
-						//se eliminan nodos idénticos (o casi)
-						delete (*itN)->blox;
-						delete *itN; 
-						N.erase(itN++); i--; 
-					}else{
-						//se genera el sucesor seleccionado, se copia el contenedor, 
-						//las cajas restantes (tipo y cantidad) y la lista de blocks factibles
-					    n->hard_copy();
-				        n->insert_Block(n->blox);
-						n->remove_unfeasible_blocks();
- 					    old_fitness=n->fitness;
- 					    volfit_nodes.insert(make_pair(n->fitness,n->fitness));
- 					    itN++;
-					}
-					
+					delete *itN; 
+					N.erase(itN++); i--; 
+				}else{
+					//se genera el sucesor seleccionado, se copia el contenedor, 
+					//las cajas restantes (tipo y cantidad) y la lista de blocks factibles
+					n->hard_copy();
+					n->insert_Block(n->blox);
+					n->remove_unfeasible_blocks();
+					old_fitness=n->fitness;
+					volfit_nodes.insert(make_pair(n->fitness,n->fitness));
+ 					itN++;
 				}
+					
 			}
+		}
 				
 
-			while(!S.empty()){
-				delete S.front();
-				S.pop_front();
-			}	
-
-			S=list<Node*>(N.begin(),N.end());
-				
-		} //hasta aqui el beam search
-		
-		//Se limpia la memoria ¿completamente?
 		while(!S.empty()){
-				delete S.front();
-				S.pop_front();
-		}				
+			delete S.front();
+			S.pop_front();
+		}	
 
-			
-
+		S=list<Node*>(N.begin(),N.end());
+				
+	} //hasta aqui el beam search
+		
+	//Se limpia la memoria ¿completamente?
+	while(!S.empty()){
+		delete S.front();
+		S.pop_front();
+	}				
 }
 
-
-
-
-
-
-   //retorna numero de bloques que calzan en el espacio correspondiente
-   int actualize_rankings_fspace(list<Block*>& blocks, const FSpace& fspace, map<BoxType*,int>& nb_left_boxes){
-   	int nb_blocks=0;
-      list<Block*>::iterator it=blocks.begin();
-   	for(;it!=blocks.end();it++){
-   	      if((*it)->ranking==-2e10) continue;	
-            if(!(*it)->feasible(nb_left_boxes)){
-                   (*it)->ranking=-2e10;
-      		 continue;		    
-   		}else if(!(**it<=fspace))
+//retorna numero de bloques que calzan en el espacio correspondiente
+int actualize_rankings_fspace(list<Block*>& blocks, const FSpace& fspace, map<BoxType*,int>& nb_left_boxes){
+   		int nb_blocks=0;
+      	list<Block*>::iterator it=blocks.begin();
+   		for(;it!=blocks.end();it++){
+   			if((*it)->ranking==-2e10) continue;	
+   			if(!(*it)->feasible(nb_left_boxes)){
+   				(*it)->ranking=-2e10;
+      		    continue;		    
+   			}else if(!(**it<=fspace))
    		    (*it)->ranking=-1e10;
-   		else{
-   	          (*it)->ranking=0;
-   		    nb_blocks++;
-   	      }		
-      }
-      return nb_blocks; 	
-   }
+   			else{
+   	          	(*it)->ranking=0;
+   		    	nb_blocks++;
+   	      	}		
+      	}
+      	return nb_blocks; 	
+ }
 
    void selectBlocks_rank(list<Block*>& blocks, int n, map<BoxType*,int>& nb_left_boxes, 
 	 set<Block*, by_ranking>& blocks_tmp){
@@ -673,8 +558,6 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
 	      
    }
 	 
- 
-
    Block* selectBlock_greedyrank(list<Block*>& blocks,  int nb_blocks,
 	  FSpace& fspace,  map<BoxType*,int>& nb_left_boxes){
 	   
@@ -694,9 +577,7 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
       return selectBlock_greedyrank(blocks, 0, fspace,  nb_left_boxes);
    }
   
-  long64 greedy(
-	  list<Block*>& blocks, Container& cont, 
-        map<BoxType*,int>& nb_left_boxes, Block_obj** first_block){
+  long64 greedy(list<Block*>& blocks, Container& cont, map<BoxType*,int>& nb_left_boxes, Block_obj** first_block){
 			//~ int j=0;
         while(!cont.free_spaces.empty()){
 	
@@ -729,11 +610,8 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
         return cont.occupied_volume();
      }
 
-
-
-
-     //create nodes with its associated action
-		 void get_bloxs(Node& node, list<Block_obj*>& bloxs, int w){
+  //create nodes with its associated action
+  void get_bloxs(Node& node, list<Block_obj*>& bloxs, int w){
 			 initialize_rankings(node.blocks, *node.nb_left_boxes, node.cont->free_spaces);           
 			 //if(!node.father) w*=w;
 			 
@@ -788,7 +666,7 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
 																		
 		 }
 
-     bool verify_solution(CLP& clp,Container& cont_tmp){
+  bool verify_solution(CLP& clp,Container& cont_tmp){
 			 list<Block_obj*>::iterator it1=cont_tmp.locations.begin();
 
 			 int collisions=0, outers=0;
@@ -812,8 +690,8 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
 			 return true;	 
 	 }
 
-     long64 compute_fitness(CLP& clp, Container& cont, map<BoxType*,int>& nb_left_boxes,
-		 list<Block*>& blocks, long64& BEST_VOLUME, Block_obj** first_block){
+  long64 compute_fitness(CLP& clp, Container& cont, map<BoxType*,int>& nb_left_boxes,
+       list<Block*>& blocks, long64& BEST_VOLUME, Block_obj** first_block){
 			 
 			 
 		   long64 max_fitness=cont.occupied_volume();
