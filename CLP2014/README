@@ -1,7 +1,7 @@
 File desctiption
 =================
 
-BSG-CLP			: The executable 64-bit version of BSG-CLP (compiled with c++ on ubuntu linux)
+CLP2			: The executable 64-bit version of BSG-CLP (compiled with c++ on ubuntu linux)
 BSG-tests.ods 	: open-office file with the results of the experiments
 data.tar.gz		: files with all the instance sets
 outputs.tar.gz	: files with the output of our BSG-CLP algorithm (on CLP and CLP-FS instances). Include all the found solutions.
@@ -11,7 +11,7 @@ outputs.tar.gz	: files with the output of our BSG-CLP algorithm (on CLP and CLP-
 Algorithm execution
 --------------------
 
-./BSG-CLP <instance_set> <initial_instance> <final_instance> <min_fr> <CLP_type> <time> <output_solution>
+./CLP2 <instance_set> <initial_instance> <final_instance> <min_fr> <CLP_type> <time> <output_solution>
 
 initial_instance	(0-99) first instance to be solved in the set.
 
@@ -28,8 +28,8 @@ output_solution		no - the founded solutions are not saved
 					
 Examples of execution:
 
-./CLP ../data/BR0.txt 0 99 0 1.0 0 500 no  %(the complete instance set 0 is solved, 500 seconds per instance)
-./CLP ../data/BR0.txt 20 20 1.0 0 500 inst   %(only the instance 20 of the instance set 0 is solved)
-./CLP ../data/BR4.txt 0 99 0 1.0 1 500 no  %(the complete instance set 4 is solved with the full support constraint)
+./CLP2 ../data/BR0.txt 0 99 1.0 0 500 no  %(the complete instance set 0 is solved, 500 seconds per instance)
+./CLP2 ../data/BR0.txt 20 20 1.0 0 500 inst   %(only the instance 20 of the instance set 0 is solved)
+./CLP2 ../data/BR4.txt 0 99 1.0 1 500 no  %(the complete instance set 4 is solved with the full support constraint)
 
 For any question write to Ignacio Araya: rilianx@gmail.com
