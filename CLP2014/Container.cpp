@@ -472,7 +472,7 @@ namespace odp{
 	    return removed_ref;
 	}
 
-    void Container::insert_spaces(list<Box>& initial, list<Box>& news, list<Box>::iterator &ref){
+    bool Container::insert_spaces(list<Box>& initial, list<Box>& news, list<Box>::iterator &ref){
 		bool removed_ref=false;
 		for(list<Box>::iterator s2=news.begin();s2!=news.end();s2++)
 			removed_ref |= insert_spaces(initial, *s2, ref);
