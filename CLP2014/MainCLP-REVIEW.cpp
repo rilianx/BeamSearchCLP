@@ -429,7 +429,7 @@ void beam_search(CLP& clp, set<Block*, compareBlocks>& set_blocks,  int w, long6
 			Node* node=*itS;
 			list<Block_obj*> bloxs;
 			node->solveKnapsack(); 
-                	//hillclimbing2(clp, node, best_volume,volfit_nodes);
+                	hillclimbing2(clp, node, best_volume,volfit_nodes);
 
                 	if(node->first_block) bloxs.push_back(new Block_obj(node->first_block->block,node->first_block));
                 	double occ= double(node->cont->occupied_volume()) / double(clp.W*clp.L*clp.H) ;
