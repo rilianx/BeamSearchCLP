@@ -405,9 +405,9 @@ namespace odp{
 			   add(*s1,*node2space[s2],nb);
 			   
                list<Box>::iterator ref=s1;
-			   insert_spaces(outputs,nb,ref); 
+			   bool removed_ref=insert_spaces(outputs,nb,ref); 
 			   
-			   if(ref==s1) s1++;
+			   if(!removed_ref) s1++;
 			   else s1=ref;
 		   }
 
@@ -445,14 +445,20 @@ namespace odp{
    
 	}
 
-    void Container::insert_spaces(list<Box>& initial, const Box& new_box,list<Box>::iterator &ref){
+
+// si el nuevo espacio (new_box) está contenido en algún espacio de initial, no hace nada
+// si el nuevo espacio no está contenido en ningún espacio de initial, se agrega a initial
+//    todos los espacios contenidos por new_box son eliminados de initial
+    bool Container::insert_spaces(list<Box>& initial, const Box& new_box,list<Box>::iterator &ref){
 			bool flag = false;
+			bool removed_ref=false;
 		    for(list<Box>::iterator s=initial.begin();s!=initial.end();){
 				if(s->includes(new_box)) {flag=true;  break;}
 				if(new_box.includes(*s)) {
 				   if(s==ref){
 				      s=initial.erase(s);	
 				      ref=s; 
+				      removed_ref=true;
 				   }else
 				      s=initial.erase(s);	
 				   	
@@ -463,12 +469,14 @@ namespace odp{
 			
 			if (!flag)
 	               initial.push_back(new_box);				
-
+	    return removed_ref;
 	}
 
     void Container::insert_spaces(list<Box>& initial, list<Box>& news, list<Box>::iterator &ref){
+		bool removed_ref=false;
 		for(list<Box>::iterator s2=news.begin();s2!=news.end();s2++)
-			insert_spaces(initial, *s2, ref);
+			removed_ref |= insert_spaces(initial, *s2, ref);
+		return removed_ref
 	}
     
 
