@@ -130,8 +130,10 @@ namespace odp {
 
 
     void remove(Block_obj* blox, map<BoxType*,int>& nb_left_boxes);
-    void insert_spaces(list<Box>& initial, list<Box>& news,list<Box>::iterator &ref);
-    void insert_spaces(list<Box>& initial, const Box& new_box,list<Box>::iterator &ref);
+    
+    //retorna true si el elemento de referencia fue reemplazado
+    bool insert_spaces(list<Box>& initial, list<Box>& news,list<Box>::iterator &ref);
+    bool insert_spaces(list<Box>& initial, const Box& new_box,list<Box>::iterator &ref);
 
     void remove_fspace(const FSpace& fspace) {
          _tree_fspaces.remove(fspace.node);
