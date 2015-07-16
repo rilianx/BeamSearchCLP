@@ -476,7 +476,7 @@ namespace odp{
 		bool removed_ref=false;
 		for(list<Box>::iterator s2=news.begin();s2!=news.end();s2++)
 			removed_ref |= insert_spaces(initial, *s2, ref);
-		return removed_ref
+		return removed_ref;
 	}
     
 
